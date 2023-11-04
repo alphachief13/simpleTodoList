@@ -1,6 +1,6 @@
 import InputSection from "./InputSection";
 import Task from "./Task";
-import EditTask from "./editTask";
+import EditTask from "./EditTask";
 
 import { useState } from "react";
 
