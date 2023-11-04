@@ -1,9 +1,13 @@
 import PropTypes from 'prop-types';
 
 
-function Task({title, onDelete}){
+function Task({title, onDelete, onEdit}){
     function handleDeleteClick(){
         onDelete(title)
+    }
+
+    function handleEditClick(){
+        onEdit(title)
     }
 
     return (
@@ -19,7 +23,7 @@ function Task({title, onDelete}){
             </h2>
 
             <div>
-            <span className="material-symbols-outlined bg-yellow-300 text-4xl font-bold m-2 rounded-md cursor-pointer hover:bg-white transition duration-300 ease-in-out">
+            <span className="material-symbols-outlined bg-yellow-300 text-4xl font-bold m-2 rounded-md cursor-pointer hover:bg-white transition duration-300 ease-in-out" onClick={handleEditClick}>
                 edit_note
             </span>
             <span className="material-symbols-outlined bg-yellow-300 text-4xl font-bold mr-2 rounded-md cursor-pointer hover:bg-white transition duration-300 ease-in-out" onClick={handleDeleteClick}>
@@ -34,7 +38,8 @@ function Task({title, onDelete}){
 
 Task.propTypes = {
     title: PropTypes.string.isRequired,
-    onDelete: PropTypes.func.isRequired
+    onDelete: PropTypes.func.isRequired,
+    onEdit: PropTypes.func.isRequired
 };
 
 
